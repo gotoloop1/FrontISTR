@@ -22,5 +22,22 @@ list(APPEND hecmw_SOURCES
   ${CMAKE_CURRENT_LIST_DIR}/hecmw_solver_scaling_nn.f90
   ${CMAKE_CURRENT_LIST_DIR}/hecmw_solver_scaling.f90
   ${CMAKE_CURRENT_LIST_DIR}/hecmw_tuning_fx.f90
+  ${CMAKE_CURRENT_LIST_DIR}/crhcm.c
+  ${CMAKE_CURRENT_LIST_DIR}/ebcm.c
+  ${CMAKE_CURRENT_LIST_DIR}/first_element_sort.c
+  ${CMAKE_CURRENT_LIST_DIR}/hcm.c
+  ${CMAKE_CURRENT_LIST_DIR}/heap.c
+  ${CMAKE_CURRENT_LIST_DIR}/hecmw_reordering_helper.c
+  ${CMAKE_CURRENT_LIST_DIR}/hecmw_reordering_sort.f90
+  ${CMAKE_CURRENT_LIST_DIR}/hecmw_reordering.f90
+  ${CMAKE_CURRENT_LIST_DIR}/memory.c
+  ${CMAKE_CURRENT_LIST_DIR}/nbcm.c
+  ${CMAKE_CURRENT_LIST_DIR}/random.c
+  ${CMAKE_CURRENT_LIST_DIR}/range_sum.c
+  ${CMAKE_CURRENT_LIST_DIR}/rcm.c
+  ${CMAKE_CURRENT_LIST_DIR}/single_sort.c
 )
 
+list(APPEND hecmw_INCLUDE_DIRS
+  ${CMAKE_CURRENT_LIST_DIR}
+)

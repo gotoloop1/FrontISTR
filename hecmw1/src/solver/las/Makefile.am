@@ -71,7 +71,19 @@ F90OBJFILEPOSTFIX = @f90objfilepostfix@
 	$(F90) -c $< $(ALL_F90FLAGS) $(F90OPTFLAGS)
 
 #-----------------------------------------------------------------------------#
-OBJS =
+OBJS = \
+  crhcm.@cobjfilepostfix@ \
+  ebcm.@cobjfilepostfix@ \
+  first_element_sort.@cobjfilepostfix@ \
+  hcm.@cobjfilepostfix@ \
+  heap.@cobjfilepostfix@ \
+  hecmw_reordering_helper.@cobjfilepostfix@ \
+  memory.@cobjfilepostfix@ \
+  nbcm.@cobjfilepostfix@ \
+  random.@cobjfilepostfix@ \
+  range_sum.@cobjfilepostfix@ \
+  rcm.@cobjfilepostfix@ \
+  single_sort.@cobjfilepostfix@
 
 OBJSF = \
   hecmw_jadm_33.@f90objfilepostfix@ \
@@ -84,15 +96,19 @@ OBJSF = \
   hecmw_solver_scaling_nn.@f90objfilepostfix@ \
   hecmw_solver_scaling.@f90objfilepostfix@ \
   hecmw_tuning_fx.@f90objfilepostfix@ \
-	hecmw_solver_las_11.@f90objfilepostfix@ \
-	hecmw_solver_las_22.@f90objfilepostfix@ \
-	hecmw_solver_las_33.@f90objfilepostfix@ \
-	hecmw_solver_las_44.@f90objfilepostfix@ \
-	hecmw_solver_las_66.@f90objfilepostfix@ \
-	hecmw_solver_las_nn.@f90objfilepostfix@ \
-	hecmw_solver_las.@f90objfilepostfix@
+  hecmw_solver_las_11.@f90objfilepostfix@ \
+  hecmw_solver_las_22.@f90objfilepostfix@ \
+  hecmw_solver_las_33.@f90objfilepostfix@ \
+  hecmw_solver_las_44.@f90objfilepostfix@ \
+  hecmw_solver_las_66.@f90objfilepostfix@ \
+  hecmw_solver_las_nn.@f90objfilepostfix@ \
+  hecmw_solver_las.@f90objfilepostfix@ \
+  hecmw_reordering_sort.@f90objfilepostfix@ \
+  hecmw_reordering.@f90objfilepostfix@
 
-HEADERS =
+HEADERS = \
+  lib.h \
+  reordering.h
 
 #-----------------------------------------------------------------------------#
 all: @build_target@

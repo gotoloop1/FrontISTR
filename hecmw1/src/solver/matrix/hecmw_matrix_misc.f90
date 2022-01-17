@@ -76,6 +76,9 @@ module hecmw_matrix_misc
   public :: hecmw_mat_set_solver_opt
   public :: hecmw_mat_get_solver_opt
 
+  public :: hecmw_mat_set_reordering
+  public :: hecmw_mat_get_reordering
+
   public :: hecmw_mat_set_resid
   public :: hecmw_mat_get_resid
   public :: hecmw_mat_set_sigma_diag
@@ -125,6 +128,8 @@ module hecmw_matrix_misc
 
   integer, parameter :: IDX_I_SOLVER_OPT_S       = 41
   integer, parameter :: IDX_I_SOLVER_OPT_E       = 50
+
+  integer, parameter :: IDX_I_REORDERING         = 66
 
   integer, parameter :: IDX_R_RESID         = 1
   integer, parameter :: IDX_R_SIGMA_DIAG    = 2
@@ -632,6 +637,20 @@ contains
     nopt = IDX_I_SOLVER_OPT_E - IDX_I_SOLVER_OPT_S + 1
     solver_opt(1:nopt) = hecMAT%Iarray(IDX_I_SOLVER_OPT_S:IDX_I_SOLVER_OPT_E)
   end subroutine hecmw_mat_get_solver_opt
+
+  subroutine hecmw_mat_set_reordering( hecMAT, reordering )
+    type(hecmwST_matrix) :: hecMAT
+    integer(kind=kint) :: reordering
+
+    hecMAT%Iarray(IDX_I_REORDERING) = reordering
+  end subroutine hecmw_mat_set_reordering
+
+  function hecmw_mat_get_reordering( hecMAT )
+    integer(kind=kint) :: hecmw_mat_get_reordering
+    type(hecmwST_matrix) :: hecMAT
+
+    hecmw_mat_get_reordering = hecMAT%Iarray(IDX_I_REORDERING)
+  end function hecmw_mat_get_reordering
 
   subroutine hecmw_mat_set_resid( hecMAT, resid )
     type(hecmwST_matrix) :: hecMAT

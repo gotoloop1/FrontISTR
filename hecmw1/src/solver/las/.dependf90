@@ -15,3 +15,17 @@ hecmw_solver_scaling_44.o : hecmw_solver_scaling_44.f90
 hecmw_solver_scaling_66.o : hecmw_solver_scaling_66.f90 
 hecmw_solver_scaling_nn.o : hecmw_solver_scaling_nn.f90 
 hecmw_tuning_fx.o : hecmw_tuning_fx.f90 
+crhcm.o : crhcm.c
+ebcm.o : ebcm.c
+first_element_sort.o : first_element_sort.c
+hcm.o : hcm.c
+heap.o : heap.c
+hecmw_reordering_helper.o : hecmw_reordering_helper.c
+hecmw_reordering_sort.o : hecmw_reordering_sort.f90
+hecmw_reordering.o : hecmw_reordering.f90
+memory.o : memory.c
+nbcm.o : nbcm.c
+random.o : random.c
+range_sum.o : range_sum.c
+rcm.o : rcm.c
+single_sort.o : single_sort.c

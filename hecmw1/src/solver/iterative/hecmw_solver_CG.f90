@@ -29,6 +29,7 @@ contains
     use hecmw_precond
     use hecmw_jad_type
     use hecmw_estimate_condition
+    use hecmw_reordering
 
     implicit none
 
@@ -103,6 +104,8 @@ contains
 
     if (hecmw_mat_get_usejad(hecMAT).ne.0) then
       call hecmw_JAD_INIT(hecMAT)
+    else
+      call hecmw_reordering_fw(hecMESH, hecMAT)
     endif
 
     if (ESTCOND /= 0 .and. hecMESH%my_rank == 0) then
@@ -286,6 +289,8 @@ contains
 
     if (hecmw_mat_get_usejad(hecMAT).ne.0) then
       call hecmw_JAD_FINALIZE(hecMAT)
+    else
+      call hecmw_reordering_bw(hecMESH, hecMAT)
     endif
 
     if (ESTCOND /= 0 .and. error == 0 .and. hecMESH%my_rank == 0) then

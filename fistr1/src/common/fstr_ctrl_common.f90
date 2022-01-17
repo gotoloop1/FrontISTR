@@ -69,7 +69,7 @@ contains
   function fstr_ctrl_get_SOLVER( ctrl, method, precond, nset, iterlog, timelog, steplog, nier, &
       iterpremax, nrest, scaling, &
       dumptype, dumpexit, usejad, ncolor_in, mpc_method, estcond, method2, recyclepre, &
-      solver_opt, &
+      solver_opt, reordering, &
       resid, singma_diag, sigma, thresh, filter )
     integer(kind=kint) :: ctrl
     integer(kind=kint) :: method
@@ -91,6 +91,7 @@ contains
     integer(kind=kint) :: method2
     integer(kind=kint) :: recyclepre
     integer(kind=kint) :: solver_opt(10)
+    integer(kind=kint) :: reordering
     real(kind=kreal) :: resid
     real(kind=kreal) :: singma_diag
     real(kind=kreal) :: sigma
@@ -130,6 +131,7 @@ contains
     if( fstr_ctrl_get_param_ex( ctrl, 'MPCMETHOD ','# ',               0, 'I',mpc_method) /= 0) return
     if( fstr_ctrl_get_param_ex( ctrl, 'ESTCOND '  ,'# ',               0,   'I',estcond ) /= 0) return
     if( fstr_ctrl_get_param_ex( ctrl, 'METHOD2 ',  mlist,              0,   'P',   method2 ) /= 0) return
+    if( fstr_ctrl_get_param_ex( ctrl, 'REORDERING ', '0,1,2,3,4,5 ', 0, 'I', reordering ) /= 0) return
     ! JP-1
     if( method > number_number ) then  ! JP-2
       method = method - number_number

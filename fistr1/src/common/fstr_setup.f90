@@ -1675,7 +1675,7 @@ contains
       svIarray(2), svIarray(3), svIarray(4), svIarray(21), svIarray(22), svIarray(23),&
       svIarray(1), svIarray(5), svIarray(6), svIarray(7), &
       svIarray(31), svIarray(32), svIarray(33), svIarray(34), svIarray(13), svIarray(14), svIarray(8),&
-      svIarray(35), svIarray(41:50), &
+      svIarray(35), svIarray(41:50), svIarray(66), &
       svRarray(1), svRarray(2), svRarray(3),                &
       svRarray(4), svRarray(5) )
     if( rcode /= 0 ) call fstr_ctrl_err_stop
